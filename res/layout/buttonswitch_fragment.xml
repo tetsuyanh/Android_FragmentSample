@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lyt_swfrag_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:gravity="center" android:background="#cccccc">
+
+        <RadioGroup
+            android:id="@+id/rb_group"
+            android:layout_width="300sp"
+            android:layout_height="30sp"
+            android:orientation="horizontal" android:layout_marginTop="5sp" android:layout_marginBottom="5sp">
+
+            <RadioButton
+                android:id="@+id/rb_left"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radioleft"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="Left"
+                android:textSize="13dp" />
+
+            <RadioButton
+                android:id="@+id/rb_center"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radiocenter"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Center"
+                android:textSize="13dp" />
+
+            <RadioButton
+                android:id="@+id/rb_right"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radioright"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Right"
+                android:textSize="13dp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/lyt_main_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+</LinearLayout>
