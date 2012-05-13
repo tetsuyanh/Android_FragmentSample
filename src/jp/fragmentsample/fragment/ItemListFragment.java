@@ -10,14 +10,12 @@ import jp.fragmentsample.model.Item;
 import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ItemListFragment extends ListFragment {
 	
@@ -30,7 +28,6 @@ public class ItemListFragment extends ListFragment {
 	
 	ItemListFragment(ArrayList<Item> list, boolean useHeader) {
 		this.list = list;
-		Log.i(ItemListFragment.class.getSimpleName(), "new()");
 		
 		if (useHeader) {
 			listOrg = (ArrayList<Item>)this.list.clone();
@@ -73,8 +70,6 @@ public class ItemListFragment extends ListFragment {
 		}
 		
 		if (headerView != null) {
-			//getListView().setFadingEdgeLength(10);
-			//getListView().setCacheColorHint(0);
 			getListView().addHeaderView(headerView);
 			getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {	

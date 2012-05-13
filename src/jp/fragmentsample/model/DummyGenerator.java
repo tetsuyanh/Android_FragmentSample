@@ -32,33 +32,54 @@ public class DummyGenerator {
 		list.add(new Item().setLabel("イメージHに関するタイトル").setDrawable(R.drawable.image_h));
 		return list;
 	}
+	
+	public static ArrayList<Item> getItemShapeList() {
+		ArrayList<Item> list = new ArrayList<Item>();
+		list = new ArrayList<Item>();
+		list.add(new Item().setDrawable(R.drawable.image_tri).setLabel("label of triangle"));
+		list.add(new Item().setDrawable(R.drawable.image_triinv).setLabel("label of triangle_inv"));
+		list.add(new Item().setDrawable(R.drawable.image_circle).setLabel("label of circle"));
+		list.add(new Item().setDrawable(R.drawable.image_quad).setLabel("label of quad"));
+		list.add(new Item().setDrawable(R.drawable.image_dia).setLabel("label of diamond"));
+		return list;
+	}
+	
+	public static ArrayList<Info> getInfoList() {
+		ArrayList<Info> list = new ArrayList<Info>();
+		list = new ArrayList<Info>();
+		for (int i = 0; i < 5; i++) {
+			Info info = new Info();
+			info.setLabel("infomation"+i).setText("Information is hogehoge. Information is hogehoge. Information is hogehoge. Information is hogehoge. Information is hogehoge. Information is hogehoge.");
+			list.add(info);
+		}
+		return list;
+	}
 
 	public static ArrayList<Label> getLabelList() {
 		ArrayList<Label> list = new ArrayList<Label>();
-		list.add(new Label().setLabel("動物").setIndex(true));
-		list.add(new Label().setLabel("犬"));
-		list.add(new Label().setLabel("猫"));
-		list.add(new Label().setLabel("虎"));
-		list.add(new Label().setLabel("牛"));
-		list.add(new Label().setLabel("象"));
-		list.add(new Label().setLabel("ネズミ"));
-		list.add(new Label().setLabel("食べ物").setIndex(true));
-		list.add(new Label().setLabel("カレー"));
-		list.add(new Label().setLabel("ラーメン"));
-		list.add(new Label().setLabel("ハンバーガー"));
-		list.add(new Label().setLabel("寿司"));
-		list.add(new Label().setLabel("パスタ"));
-		list.add(new Label().setLabel("都市").setIndex(true));
-		list.add(new Label().setLabel("川崎市"));
-		list.add(new Label().setLabel("防府市"));
-		list.add(new Label().setLabel("渋谷区"));
-		list.add(new Label().setLabel("自由が丘"));
-		list.add(new Label().setLabel("TV program").setIndex(true));
-		list.add(new Label().setLabel("glee"));
-		list.add(new Label().setLabel("新ビバリーヒルズ青春白書"));
-		list.add(new Label().setLabel("笑点"));
-		list.add(new Label().setLabel("ガキの使いやあらへんで"));
-		list.add(new Label().setLabel("世界のはてまでいってＱ"));
+		list.add(new Label().setLabel("place").setIndex(true));
+		list.add(new Label().setLabel("home"));
+		list.add(new Label().setLabel("library"));
+		list.add(new Label().setLabel("station"));
+		list.add(new Label().setLabel("company"));
+		list.add(new Label().setLabel("road"));
+		list.add(new Label().setLabel("hospital"));
+		list.add(new Label().setLabel("food").setIndex(true));
+		list.add(new Label().setLabel("curry"));
+		list.add(new Label().setLabel("nooodle"));
+		list.add(new Label().setLabel("sushi"));
+		list.add(new Label().setLabel("rice"));
+		list.add(new Label().setLabel("city").setIndex(true));
+		list.add(new Label().setLabel("kawasaki"));
+		list.add(new Label().setLabel("shibuya"));
+		list.add(new Label().setLabel("hofu"));
+		list.add(new Label().setLabel("jiyugaoka"));
+		list.add(new Label().setLabel("country").setIndex(true));
+		list.add(new Label().setLabel("japan"));
+		list.add(new Label().setLabel("usa"));
+		list.add(new Label().setLabel("china"));
+		list.add(new Label().setLabel("korea"));
+		list.add(new Label().setLabel("italy"));
 		
 		return list;
 	}

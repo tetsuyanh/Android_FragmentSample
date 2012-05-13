@@ -8,7 +8,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,15 +33,13 @@ public class ButtonSwitchFragment extends Fragment {
 		fragRight = new EmptyFragment(Color.WHITE);
 		
 		view = null;
-		indexFragment = 0;Log.i(TAG, "onCreate");
+		indexFragment = 0;
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		
-		if (true) {
-		//if (view == null) {
-			view = inflater.inflate(R.layout.buttonswitch_fragment, container, false);
+		view = inflater.inflate(R.layout.buttonswitch_fragment, container, false);
 		
 		RadioGroup group = (RadioGroup)view.findViewById(R.id.rb_group);
 		group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -54,12 +51,9 @@ public class ButtonSwitchFragment extends Fragment {
 				case R.id.rb_right: changeFragment(2); break;
 				}
 			}
-		});Log.i(TAG, "onCreateView_createView");
-		}
+		});
 		
 		changeFragment(indexFragment);
-		
-		Log.i(TAG, "onCreateView_end");
 		
 		return view;
 	}

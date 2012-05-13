@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/jp/fragmentsample/activity/DetailActivity.java=UTF-8
+encoding//src/jp/fragmentsample/adapter/InfoListAdapter.java=UTF-8
 encoding//src/jp/fragmentsample/adapter/ItemListAdapter.java=UTF-8
 encoding//src/jp/fragmentsample/adapter/LabelListAdapter.java=UTF-8
 encoding//src/jp/fragmentsample/fragment/ButtonSwitchFragment.java=UTF-8
 encoding//src/jp/fragmentsample/fragment/DetailFragment.java=UTF-8
-encoding//src/jp/fragmentsample/fragment/DetailFragment2.java=UTF-8
 encoding//src/jp/fragmentsample/model/DummyGenerator.java=UTF-8

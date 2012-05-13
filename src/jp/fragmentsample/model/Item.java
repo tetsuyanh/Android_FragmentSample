@@ -1,17 +1,16 @@
 package jp.fragmentsample.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-//import android.graphics.drawable.Drawable;
-
-public class Item implements Serializable, Cloneable {
+public class Item implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String label;
-	private String text;
 	private int drawable;
-	private boolean index = false;
+	private List<Info> infos;
+	private List<Item> relations;
 	
 	// clone
 	public Object clone() {
@@ -31,15 +30,6 @@ public class Item implements Serializable, Cloneable {
 		return this;
 	}
 	
-	public String getText() {
-		return text;
-	}
-	
-	public Item setText(String text) {
-		this.text = text;
-		return this;
-	}
-	
 	public int getDrawable() {
 		return drawable;
 	}
@@ -49,12 +39,30 @@ public class Item implements Serializable, Cloneable {
 		return this;
 	}
 	
-	public boolean isIndex() {
-		return index;
+	public List<Info> getInfos() {
+		return infos;
 	}
 	
-	public Item setIndex(boolean flag) {
-		this.index = flag;
+	public Item addInfo(Info info) {
+		infos.add(info);
 		return this;
 	}
+	
+	public void clearInfos() {
+		infos.clear();
+	}
+
+	public List<Item> getRelations() {
+		return relations;
+	}
+	
+	public Item addRelation(Item item) {
+		relations.add(item);
+		return this;
+	}
+	
+	public void clearRelations() {
+		relations.clear();
+	}
+	
 }

@@ -117,7 +117,7 @@ public class MainActivity extends Activity {
 		public Fragment getItem(int position) {
 			if (position == 0) return new ButtonSwitchFragment();
 			else if (position == 1) return new LabelListFragment(DummyGenerator.getLabelList());
-			else return new EmptyFragment(Color.RED);
+			else return new EmptyFragment(Color.WHITE);
 		}
 
 		@Override
