@@ -7,13 +7,17 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:gravity="center" android:background="#cccccc">
+        android:layout_height="wrap_content"
+        android:background="#f0f0f0"
+        android:gravity="center" >
 
         <RadioGroup
             android:id="@+id/rb_group"
             android:layout_width="300sp"
-            android:layout_height="30sp"
-            android:orientation="horizontal" android:layout_marginTop="5sp" android:layout_marginBottom="5sp">
+            android:layout_height="35sp"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp"
+            android:orientation="horizontal" >
 
             <RadioButton
                 android:id="@+id/rb_left"
@@ -25,7 +29,8 @@
                 android:checked="true"
                 android:gravity="center"
                 android:text="Left"
-                android:textSize="13dp" />
+                android:textSize="12dp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_center"
@@ -36,7 +41,8 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="Center"
-                android:textSize="13dp" />
+                android:textSize="12dp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_right"
@@ -47,7 +53,8 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="Right"
-                android:textSize="13dp" />
+                android:textSize="12dp"
+                android:textStyle="bold" />
         </RadioGroup>
     </LinearLayout>
 

@@ -1,13 +1,26 @@
 package jp.fragmentsample.model;
 
+import java.io.Serializable;
+
 //import android.graphics.drawable.Drawable;
 
-public class Item {
+public class Item implements Serializable, Cloneable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private String label;
 	private String text;
 	private int drawable;
 	private boolean index = false;
+	
+	// clone
+	public Object clone() {
+		try {
+			return super.clone();
+		} catch (CloneNotSupportedException e) {
+			return null;
+		}
+	}
 	
 	public String getLabel() {
 		return label;

@@ -6,6 +6,7 @@ import jp.fragmentsample.model.DummyGenerator;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,19 +22,28 @@ public class ButtonSwitchFragment extends Fragment {
 	private ItemListFragment fragCenter;
 	private EmptyFragment fragRight;
 	
+	private View view;
+	private int indexFragment;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		fragLeft = new ItemListFragment(DummyGenerator.getItemNumberList(), true);
 		fragCenter = new ItemListFragment(DummyGenerator.getItemAlphabetList(), true);
-		fragRight = new EmptyFragment();
+		fragRight = new EmptyFragment(Color.WHITE);
+		
+		view = null;
+		indexFragment = 0;Log.i(TAG, "onCreate");
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.buttonswitch_fragment, container, false);
-
+		
+		if (true) {
+		//if (view == null) {
+			view = inflater.inflate(R.layout.buttonswitch_fragment, container, false);
+		
 		RadioGroup group = (RadioGroup)view.findViewById(R.id.rb_group);
 		group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -43,12 +53,13 @@ public class ButtonSwitchFragment extends Fragment {
 				case R.id.rb_center: changeFragment(1); break;
 				case R.id.rb_right: changeFragment(2); break;
 				}
-				Log.i(TAG, "buttonId:" + checkedId);
 			}
-		});
+		});Log.i(TAG, "onCreateView_createView");
+		}
 		
-		//group.check(R.id.rb_left);	
-		changeFragment(0);
+		changeFragment(indexFragment);
+		
+		Log.i(TAG, "onCreateView_end");
 		
 		return view;
 	}
@@ -57,8 +68,18 @@ public class ButtonSwitchFragment extends Fragment {
 		FragmentManager fragMgr = getFragmentManager();
 		FragmentTransaction fragTrs = fragMgr.beginTransaction();
 		
-		switch (index) {
+		indexFragment = index;
+		switch (indexFragment) {
 		case 0:
+			fragTrs.replace(R.id.lyt_main_fragment_container, new ItemListFragment(DummyGenerator.getItemNumberList(), true));
+			break;
+		case 1:
+			fragTrs.replace(R.id.lyt_main_fragment_container, new ItemListFragment(DummyGenerator.getItemAlphabetList(), true));
+			break;
+		case 2:
+			fragTrs.replace(R.id.lyt_main_fragment_container, new EmptyFragment(Color.WHITE));
+			break;
+		/*case 0:
 			fragTrs.replace(R.id.lyt_main_fragment_container, fragLeft);
 			break;
 		case 1:
@@ -66,7 +87,7 @@ public class ButtonSwitchFragment extends Fragment {
 			break;
 		case 2:
 			fragTrs.replace(R.id.lyt_main_fragment_container, fragRight);
-			break;
+			break;*/
 		}
 		fragTrs.commit();
 	}

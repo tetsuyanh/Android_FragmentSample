@@ -8,9 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class EmptyFragment extends Fragment {
+	
+	private int color;
+	
+	public EmptyFragment(int color) {
+		this.color = color;
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceBundle) {
-		return inflater.inflate(R.layout.empty_fragmen, container, false);
+		View view = inflater.inflate(R.layout.empty_fragmen, container, false);
+		view.setBackgroundColor(color);
+		
+		return view;
 	}
 }

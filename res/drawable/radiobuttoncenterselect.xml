@@ -4,11 +4,11 @@
 
     <stroke
         android:width="0.66dp"
-        android:color="#222222" />
+        android:color="#CCCCCC" />
 
     <gradient
         android:angle="270"
-        android:endColor="#333333"
-        android:startColor="#4A4A4A" />
+        android:endColor="#33B5E5"
+        android:startColor="#33B5E5" />
 
 </shape>

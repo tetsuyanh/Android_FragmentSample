@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -51,14 +52,15 @@ public class MainActivity extends Activity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int tabWidth = metrics.widthPixels / 3;
-        int tabHeight = tabWidth / 2;
+        int tabHeight = metrics.widthPixels / 7;
         
         for (int i = 0; i < 3; i++) {
         	TabSpec spec = tabHost.newTabSpec("tab"+i);
         	spec.setIndicator(getTabView(tabWidth, tabHeight, "TAB"+i));
         	adapter.addTab(spec, "tab"+i);
-        }       
-    }
+        }
+        
+   }
     
     private TextView getTabView(int width, int height, String title) {
     	TextView view = new TextView(this);
@@ -114,8 +116,8 @@ public class MainActivity extends Activity {
 		@Override
 		public Fragment getItem(int position) {
 			if (position == 0) return new ButtonSwitchFragment();
-			else if (position == 1) return new LabelListFragment(DummyGenerator.getIndexList());
-			else return new EmptyFragment();
+			else if (position == 1) return new LabelListFragment(DummyGenerator.getLabelList());
+			else return new EmptyFragment(Color.RED);
 		}
 
 		@Override

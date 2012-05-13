@@ -33,7 +33,7 @@ public class DummyGenerator {
 		return list;
 	}
 
-	public static ArrayList<Label> getIndexList() {
+	public static ArrayList<Label> getLabelList() {
 		ArrayList<Label> list = new ArrayList<Label>();
 		list.add(new Label().setLabel("動物").setIndex(true));
 		list.add(new Label().setLabel("犬"));

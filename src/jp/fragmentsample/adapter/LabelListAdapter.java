@@ -20,10 +20,12 @@ import android.widget.TextView;
 
 public class LabelListAdapter extends ArrayAdapter<Label> {
 	private LayoutInflater inflater;
+	private Activity activity;
 	
 	public LabelListAdapter(Activity activity, ArrayList<Label> listIndex) {
 		super(activity, R.layout.label_row, listIndex);
 		this.inflater = activity.getLayoutInflater();
+		this.activity = activity;
 	}
 
 	@Override
@@ -32,7 +34,7 @@ public class LabelListAdapter extends ArrayAdapter<Label> {
 		ViewWrapper wrapper = null;
 
 		if (view == null) {
-			view = inflater.inflate(R.layout.label_row, null);
+			view = activity.getLayoutInflater().inflate(R.layout.label_row, null);
 			wrapper = new ViewWrapper(view);
 			view.setTag(wrapper);
 		} else {
@@ -65,10 +67,11 @@ public class LabelListAdapter extends ArrayAdapter<Label> {
 		
 		public void setText(String text, boolean index) {
 			if (index) {
-				view.setBackgroundColor(Color.BLACK);
+				view.setBackgroundColor(Color.RED);
+				labelText.setVisibility(View.GONE);
 				indexText.setVisibility(View.VISIBLE);
 				indexText.setText(text);
-				labelText.setVisibility(View.GONE);
+				
 			} else {
 				view.setBackgroundColor(Color.WHITE);
 				indexText.setVisibility(View.GONE);
